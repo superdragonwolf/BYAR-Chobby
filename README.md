@@ -17,7 +17,7 @@ BYAR mutator for [Chobby](https://github.com/spring-chobby/chobby)
 **NOTE**: The `games` directory is `data/games` under windows, and just `games` under Linux.
 
 ```
-git clone https://github.com/beyond-all-reason/BYAR-Chobby.git BYAR-Chobby.sdd
+git clone https://github.com/superdragonwolf/BYAR-Chobby.git tactics-BYAR-Chobby.sdd
 ```
 
 This should result in the following directory being present: `/path/to/install/dir/data/games/BYAR-Chobby.sdd/` under . (`Beyond-All-Reason\data\games\BYAR-Chobby.sdd\LuaMenu\configs\gameConfig` should be a correct path)
@@ -41,7 +41,7 @@ To enable debugmode, make an empty `devmode.txt` in the already used game instal
 2. Open the install directory, and inside the `games` directory clone the BAR *game* repository:
 
 ```
-git clone https://github.com/beyond-all-reason/Beyond-All-Reason.git BAR.sdd
+git clone https://github.com/superdragonwolf/Beyond-All-Reason.git tactics-BAR.sdd
 ```
 
 3. Start Chobby with `Dev Lobby` config, open the `Settings/Developer` tab and in the `Singleplayer` option choose `Beyond All Reason Dev`. The application title should change to `Beyond All Reason Dev`.
