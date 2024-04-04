@@ -1,7 +1,7 @@
 local scenariodata = {
 	index			= 108, --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
 	scenarioid		= "tacticsscenarioscript", -- no spaces, lowercase, this will be used to save the score and can be used gadget side
-    version         = "0.2", -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
+    version         = "0.1", -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
 	title			= "Tactics - BAR Tactical Defence Mod", -- can be anything
 	author			= "SuperDragonWolf", -- your name here
 	imagepath		= "scenario108.jpg", -- placed next to lua file, should be 3:1 ratio banner style
@@ -49,9 +49,9 @@ This scenario is different based on the selected difficulty:
         -- dont use the one in startscript, put the disabled stuff here so we can show it in scenario window!
         --armavp = 0,
         --coravp = 0,
-		armap = 0,
-		armaap = 0,
-		armplat = 0,
+		--armap = 0,
+		--armaap = 0,
+		--armplat = 0,
     } ,
 
     scenariooptions = { -- this will get lua->json->base64 and passed to scenariooptions in game
@@ -60,7 +60,7 @@ This scenario is different based on the selected difficulty:
 		disablefactionpicker = true, -- this is needed to prevent faction picking outside of the allowedsides
 
         unitloadout = {
-			{name = 'corcom', x = 1633, y = 384, z = 4513, rot = 0 , team = 0, neutral = false},
+			{name = 'corcom', x = 1633, y = 385, z = 4513, rot = 32767 , team = 0, neutral = false},
             {name = 'armcom', x = 1633, y = 385, z = 1679, rot = 0 , team = 1, neutral = false},
 		},
 		featureloadout = {
@@ -87,88 +87,77 @@ This scenario is different based on the selected difficulty:
     -- __RESTRICTEDUNITS__
 
 	startscript		= [[[GAME]
+{
+	[allyTeam0]
 	{
-		[allyTeam0]
-		{
-			numallies = 0;
-		}
-	
-		[ai1]
-		{
-			Host = 0;
-			IsFromDemo = 0;
-			Name = InactiveAI(1);
-			ShortName = NullAI;
-			Team = 2;
-			Version = stable;
-		}
+		numallies = 0;
+	}
 
-        [team2]
-		{
-			Side = Cortex;
-			Handicap = __ENEMYHANDICAP__;
-			RgbColor = 0.99609375 0.546875 0;
-			AllyTeam = 1;
-			TeamLeader = 0;
-		}
-	
-		[team1]
-		{
-			Side = Cortex;
-			Handicap = __ENEMYHANDICAP__;
-			RgbColor = 0.99609375 0.546875 0;
-			AllyTeam = 1;
-			TeamLeader = 0;
-		}
-	
-		[allyTeam1]
-		{
-			numallies = 0;
-		}
-		
-		[team0]
-		{
-			Side = __PLAYERSIDE__;
-			Handicap = __PLAYERHANDICAP__;
-			RgbColor = 0.99609375 0.546875 0;
-			AllyTeam = 0;
-			TeamLeader = 0;
-			StartPosX = 1176;
-			StartPosZ = 1414;
-		}
+	[team1]
+	{
+		Side = Armada;
+		Handicap = __ENEMYHANDICAP__;
+		RgbColor = 0.99609375 0.546875 0;
+		AllyTeam = 1;
+		TeamLeader = 0;
+	}
 
-        [modoptions]
-        {
-            scenariooptions = __SCENARIOOPTIONS__;
-			startmetal = 50;
-        }    
-	
-		[player0]
-		{
-			IsFromDemo = 0;
-			Name = __PLAYERNAME__;
-			Team = 0;
-			rank = 0;
-		}
+	[team0]
+	{
+		Side = __PLAYERSIDE__;
+		Handicap = __PLAYERHANDICAP__;
+		RgbColor =  0.99609375 0.546875 0;
+		AllyTeam = 0;
+		TeamLeader = 0;
+	}
 
-		NumRestrictions=__NUMRESTRICTIONS__;
+	[allyTeam1]
+	{
+		numallies = 0;
+	}
 
-		[RESTRICT]
-		{
-			__RESTRICTEDUNITS__
-		}
+	[modoptions]
+	{
+		scenariooptions = __SCENARIOOPTIONS__;
+		startmetal = 350;
+	}
 
-		hostip = 127.0.0.1;
-		hostport = 0;
-		numplayers = 1;
-		startpostype = 3; // 0 fixed, 1 random, 2 choose in game, 3 choose before game (see StartPosX)
-		mapname = __MAPNAME__;
-		ishost = 1;
-		numusers = 2;
-		gametype = __BARVERSION__;
-		GameStartDelay = 5;  // seconds before game starts after loading/placement
-		myplayername = __PLAYERNAME__;
-		nohelperais = 0;
+	[ai0]
+	{
+		Host = 0;
+		IsFromDemo = 0;
+		Name = InactiveAI(1);
+		ShortName = NullAI;
+		Team = 1;
+		Version = stable;
+	}
+
+	[player0]
+	{
+		IsFromDemo = 0;
+		Name = __PLAYERNAME__;
+		Team = 0;
+		rank = 0;
+	}
+
+	NumRestrictions=__NUMRESTRICTIONS__;
+
+	[RESTRICT]
+	{
+		__RESTRICTEDUNITS__
+	}
+
+	hostip = 127.0.0.1;
+	hostport = 0;
+	numplayers = 1;
+	startpostype = 3; // 0 fixed, 1 random, 2 choose in game, 3 choose before game (see StartPosX)
+	mapname = __MAPNAME__;
+	ishost = 1;
+	numusers = 2;
+	gametype = __BARVERSION__;
+	GameStartDelay = 5;  // seconds before game starts after loading/placement
+	myplayername = __PLAYERNAME__;
+	nohelperais = 0;
 }
 	]],
 
