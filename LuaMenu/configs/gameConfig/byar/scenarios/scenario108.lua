@@ -27,8 +27,8 @@ This scenario is different based on the selected difficulty:
  ]],
 
 	mapfilename		= "Asteroid_Mines_V3", -- the name of the map to be displayed here, and which to play on, no .smf ending needed
-	playerstartx	= "30%", -- X position of where player comm icon should be drawn, from top left of the map
-	playerstarty	= "70%", -- Y position of where player comm icon should be drawn, from top left of the map
+	playerstartx	= "34.3%", -- X position of where player comm icon should be drawn, from top left of the map
+	playerstarty	= "68.3%", -- Y position of where player comm icon should be drawn, from top left of the map
 	partime 		= 3600, -- par time in seconds (time a mission is expected to take on average)
 	parresources	= 1000000, -- par resource amount (amount of metal one is expected to spend on mission)
 	difficulty		= 11, -- Percieved difficulty at 'normal' level: integer 1-10
@@ -42,7 +42,7 @@ This scenario is different based on the selected difficulty:
         {name = "Hard"    , playerhandicap = 0.4,  enemyhandicap=0},
         {name = "Brutal" , playerhandicap = 0.5,  enemyhandicap=0},
     },
-    allowedsides     = {"Armada"}, --these are the permitted factions for this mission, ch0ose from {"Armada", "Cortex", "Random"}
+    allowedsides     = {"Cortex"}, --these are the permitted factions for this mission, ch0ose from {"Armada", "Cortex", "Random"}
 	victorycondition= "Kill all enemy Commanders", -- This is plaintext, but should be reflected in startscript
 	losscondition	= "Death of your Commander",  -- This is plaintext, but should be reflected in startscript
     unitlimits   = { -- table of unitdefname : maxnumberofthese units, 0 means disable it
@@ -60,11 +60,11 @@ This scenario is different based on the selected difficulty:
 		disablefactionpicker = true, -- this is needed to prevent faction picking outside of the allowedsides
 
         unitloadout = {
-			{name = 'corcom', x = 1500, y = 384, z = 1500, rot = -28368 , team = 0, neutral = false},
-            {name = 'armcom', x = 1500, y = 385, z = 5000, rot = -17635 , team = 1, neutral = false},
+			{name = 'corcom', x = 1633, y = 384, z = 4513, rot = 0 , team = 0, neutral = false},
+            {name = 'armcom', x = 1633, y = 385, z = 1679, rot = 0 , team = 1, neutral = false},
 		},
 		featureloadout = {
-            {name = 'armbanth_heap', x = 2000, y = 382, z = 2000, rot = 0 , scale = 1.0, resurrectas = ""},
+            {name = 'armbanth_heap', x = 2000, y = 382, z = 4500, rot = 0 , scale = 1.0, resurrectas = ""},
 		}
     },
     -- Full Documentation for start script here:
