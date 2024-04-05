@@ -425,7 +425,7 @@ local function CreateModoptionWindow()
 		modoptionsSelectionWindow:Dispose()
 	end
 
-	local buttonAccept
+	local buttonAccept, buttonReset
 
 	local function AcceptFunc()
 		screen0:FocusControl(buttonAccept) -- Defocus the text entry
@@ -534,11 +534,13 @@ local function InitializeModoptionsDisplay()
 	end
 
 	local function OnSetModOptions(listener, modopts)
+		if not modopts then
+			return
+		end
 		local text = ""
 		local empty = true
-		modoptions = modoptions or {}
-		modopts = modopts or {}
-		for key, value in pairs(modopts) do
+		modoptions = modopts
+		for key, value in pairs(modoptions) do
 			if modoptionDefaults[key] == nil or modoptionDefaults[key] ~= value or key == "ranked_game" then
 				local option = getModOptionByKey(key)
 				local name = option.name and option.name or key
