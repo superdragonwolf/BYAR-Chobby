@@ -31,7 +31,7 @@ This scenario is different based on the selected difficulty:
 	playerstarty	= "68.3%", -- Y position of where player comm icon should be drawn, from top left of the map
 	partime 		= 3600, -- par time in seconds (time a mission is expected to take on average)
 	parresources	= 1000000, -- par resource amount (amount of metal one is expected to spend on mission)
-	difficulty		= 11, -- Percieved difficulty at 'normal' level: integer 1-10
+	difficulty		= 1, -- Percieved difficulty at 'normal' level: integer 1-10
     defaultdifficulty = "Normal", -- an entry of the difficulty table
     difficulties    = { -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
     -- handicap values range [-100 - +100], with 0 being regular resources
@@ -62,6 +62,7 @@ This scenario is different based on the selected difficulty:
         unitloadout = {
 			{name = 'corcom', x = 1633, y = 385, z = 4513, rot = 32767 , team = 0, neutral = false},
 			{name = 'corllt', x = 1633, y = 385, z = 3697, rot = 32767 , team = 0, neutral = false},
+			-- {name = 'corrad', x = 1633, y = 385, z = 3200, rot = 32767 , team = 0, neutral = false},
             {name = 'armcom', x = 1633, y = 385, z = 1679, rot = 0 , team = 1, neutral = false},
 		},
 		featureloadout = {
