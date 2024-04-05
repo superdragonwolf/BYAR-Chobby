@@ -61,6 +61,7 @@ This scenario is different based on the selected difficulty:
 
         unitloadout = {
 			{name = 'corcom', x = 1633, y = 385, z = 4513, rot = 32767 , team = 0, neutral = false},
+			{name = 'corllt', x = 1633, y = 385, z = 3697, rot = 32767 , team = 0, neutral = false},
             {name = 'armcom', x = 1633, y = 385, z = 1679, rot = 0 , team = 1, neutral = false},
 		},
 		featureloadout = {
