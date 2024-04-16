@@ -16,6 +16,14 @@ local welcomePanelItems = {
     },
 
     {
+        Header = "BAR is accepting donations again! ",
+        Text = "Dear Commanders, we are delighted to announce the reopening of our donation platform after a longer-than-expected hiatus." .. " \n" .. " \n" .. "As we've been hard at work refining BAR to ensure maximum enjoyment for our ever-expanding community, we repeatedly placed donation efforts on hold to focus on other priorities." .. " \n" .. " \n" .. "Support BAR with our newly reopened donation platform!",
+        Image = "LuaMenu/images/donate.png",
+        Url = "https://www.beyondallreason.info/news/support-bar-with-our-newly-reopened-donation-platform",
+        UrlText = "Read Announcement",
+    },
+
+    {
         Header = "Beyond All Reason Alpha Championship Cup #4",
         Text = "Format: 1v1 - Double Elimination",
         --Image = "LuaMenu/images/welcomepanel/1vs1Tournament.png",
@@ -91,7 +99,8 @@ local welcomePanelItems = {
             "Gives you a nice breakdown of how the autobalance works in your current battleroom.\n" ..
             " \n" ..
             "For a full list of commands, use !help and $help in any multiplayer room." ..
-            " \n",
+            " \n" ..
+            " \b",
     },
 }
 
